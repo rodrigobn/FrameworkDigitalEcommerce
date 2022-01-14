@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="logo">logo</string>
+    <string name="developed_by">Desenvolvido por </string>
+    <string name="developer">Rodrigo Brito</string>
+    <string name="error">Erro!</string>
+    <string name="description_icon_error">icon error</string>
+    <string name="welcome_to_app">Bem vindo ao</string>
+    <string name="message_login">Insira as suas informações\npara continuar</string>
+    <string name="name">Nome</string>
+    <string name="password">password</string>
+    <string name="log_in">Entrar</string>
+    <string name="invalid_password">Insira uma senha!</string>
+    <string name="invalid_name">Insira um nome com pelo menos 4 caracteres!</string>
+    <string name="hello">Olá, %s!</string>
+</resources>
