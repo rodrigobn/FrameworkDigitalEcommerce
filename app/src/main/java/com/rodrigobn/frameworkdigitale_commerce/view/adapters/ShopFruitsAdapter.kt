@@ -7,19 +7,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.rodrigobn.frameworkdigitale_commerce.R
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
-import com.rodrigobn.frameworkdigitale_commerce.prefs
-import kotlinx.android.synthetic.main.item_product.view.*
+import kotlinx.android.synthetic.main.item_shop_product.view.*
 
-class FruitsAdapter(
+class ShopFruitsAdapter(
     private val products: MutableList<Product>,
     private val buttonAddProductClickListener: ButtonAddProductClickListener
-) : RecyclerView.Adapter<FruitsAdapter.ProductViewHolder>() {
+) : RecyclerView.Adapter<ShopFruitsAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         return ProductViewHolder(
             LayoutInflater
                 .from(parent.context)
-                .inflate(R.layout.item_product, parent, false)
+                .inflate(R.layout.item_shop_product, parent, false)
         )
     }
 
@@ -29,9 +28,6 @@ class FruitsAdapter(
         holder.bindView(products[position], buttonAddProductClickListener)
     }
 
-    /**
-     * Update list
-     */
     fun updateList(itemList: MutableList<Product>) {
         this.products.clear()
         this.products.addAll(itemList)
@@ -58,15 +54,12 @@ class FruitsAdapter(
             priceProduct.text = "1kg R$ %.2f".format(product.price)
 
             buttonAdd.setOnClickListener {
-                buttonAddClickListener.onButtonClickListener(product)
+                buttonAddClickListener.onButtonAddProductClickListener(product)
             }
         }
     }
 
-    /**
-     * product callback
-     */
     interface ButtonAddProductClickListener {
-        fun onButtonClickListener(product: Product)
+        fun onButtonAddProductClickListener(product: Product)
     }
 }

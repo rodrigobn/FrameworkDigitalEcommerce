@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.rodrigobn.frameworkdigitale_commerce.data.dataBase.DatabaseRepository
 import com.rodrigobn.frameworkdigitale_commerce.data.dataBase.ProductDAO
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
+import com.rodrigobn.frameworkdigitale_commerce.prefs
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val databaseRepository: DatabaseRepository): ViewModel(){
@@ -20,6 +21,19 @@ class MainViewModel(private val databaseRepository: DatabaseRepository): ViewMod
     fun save(newProduct: Product){
         viewModelScope.launch {
             databaseRepository.save(newProduct)
+        }
+    }
+
+    fun updateListProduct(product: Product){
+        viewModelScope.launch {
+            databaseRepository.update(product)
+        }
+    }
+
+    fun logout() {
+        prefs.nameProfile = null
+        viewModelScope.launch {
+            databaseRepository.deleteAll()
         }
     }
 }

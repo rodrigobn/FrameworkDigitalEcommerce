@@ -5,12 +5,13 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.rodrigobn.frameworkdigitale_commerce.R
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
 import kotlinx.android.synthetic.main.dialog_quantity.*
 
-class DialogProductQuantity(val product: Product, context: Context): Dialog(context) {
+class DialogProductQuantity(val product: Product, private val callbackDialog: CallbackDialog, context: Context): Dialog(context) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,7 +19,13 @@ class DialogProductQuantity(val product: Product, context: Context): Dialog(cont
         this.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         setupCard()
         btnAddProduct.setOnClickListener {
-            dismiss()
+            if (editTextQuantity.text.toString().isNotEmpty()){
+                product.quantity = editTextQuantity.text.toString().toInt()
+                callbackDialog.onClickDialogConfirm(product)
+                dismiss()
+            } else{
+                Toast.makeText(context, "Digite uma quantidade", Toast.LENGTH_LONG).show()
+            }
         }
     }
 

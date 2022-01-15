@@ -22,4 +22,6 @@
     <string name="unit_kg">Kg</string>
     <string name="quantity">Quantidade</string>
     <string name="add">Adicionar</string>
+    <string name="search">Buscar</string>
+    <string name="logout">Sair</string>
 </resources>

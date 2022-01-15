@@ -14,6 +14,9 @@
             android:name=".view.main.MainActivity"
             android:exported="true" />
         <activity
+            android:name=".view.shopCart.CartActivity"
+            android:exported="true" />
+        <activity
             android:name=".view.splashscreen.SplashActivity"
             android:exported="true"
             android:theme="@style/Theme.FrameworkDigitalEcommerce.NoActionBar">
