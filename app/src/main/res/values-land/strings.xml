@@ -13,4 +13,12 @@
     <string name="invalid_password">Insira uma senha!</string>
     <string name="invalid_name">Insira um nome com pelo menos 4 caracteres!</string>
     <string name="hello">Olá, %s!</string>
+    <string name="welcome">Bem-vindo ao nosso app de compras</string>
+    <string name="fruits">Frutas</string>
+    <string name="image_product">Imagem do produto</string>
+    <string name="add_product">add +</string>
+    <string name="cart">Carrinho de compras</string>
+    <string name="unit_kg">Kg</string>
+    <string name="quantity">Quantidade</string>
+    <string name="add">Adicionar</string>
 </resources>

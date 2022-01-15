@@ -1,21 +1,27 @@
 package com.rodrigobn.frameworkdigitale_commerce.data.dataBase
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
 
 @Dao
 interface ProductDAO {
 
-    @Query("SELECT * FROM product_table ORDER BY name ASC")
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(product: Product)
+
+    @Delete
+    suspend fun remove(product: Product)
+
+    @Update
+    suspend fun update(product: Product)
+
+    @Query("SELECT * FROM product_table")
     fun getProducts(): LiveData<List<Product>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insert(product: Product)
+    @Query("SELECT * FROM product_table WHERE id = :key")
+    fun get(key: Long) : Product
 
     @Query("DELETE FROM product_table")
-    fun deleteAll()
+    suspend fun deleteAll()
 }

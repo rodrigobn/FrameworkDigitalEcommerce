@@ -7,12 +7,15 @@
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/drawable/btn_bg.xml" value="0.28888888888888886" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/drawable/edt_bg.xml" value="0.28888888888888886" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/drawable/ic_error.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/drawable/ic_shopping_cart.xml" value="0.26296296296296295" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/activity_register.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/activity_splash.xml" value="0.264" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/content_main.xml" value="0.2462962962962963" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/dialog_quantity.xml" value="0.264" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/layout/item_product.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/menu/menu_main.xml" value="0.2462962962962963" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/mipmap-anydpi-v26/ic_banana.xml" value="0.28888888888888886" />
         <entry key="..\:/Users/Dell/AndroidStudioProjects/FrameworkDigitalEcommerce/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.22135416666666666" />

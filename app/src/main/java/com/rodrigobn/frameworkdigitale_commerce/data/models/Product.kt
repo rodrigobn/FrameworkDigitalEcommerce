@@ -8,7 +8,7 @@ import com.google.gson.Gson
 @Entity(tableName = "product_table")
 class Product(
     @PrimaryKey(autoGenerate = true)
-    var id: Int,
+    var id: Long = 0,
     @ColumnInfo
     var name: String,
     @ColumnInfo
