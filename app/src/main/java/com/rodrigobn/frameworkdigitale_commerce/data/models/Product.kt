@@ -14,7 +14,7 @@ class Product(
     @ColumnInfo
     var description: String,
     @ColumnInfo
-    var quantity: Int,
+    var quantity: Float,
     @ColumnInfo
     var price: Float,
     @ColumnInfo

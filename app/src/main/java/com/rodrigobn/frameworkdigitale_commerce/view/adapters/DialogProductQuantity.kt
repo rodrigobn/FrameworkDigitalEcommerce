@@ -20,7 +20,7 @@ class DialogProductQuantity(val product: Product, private val callbackDialog: Ca
         setupCard()
         btnAddProduct.setOnClickListener {
             if (editTextQuantity.text.toString().isNotEmpty()){
-                product.quantity = editTextQuantity.text.toString().toInt()
+                product.quantity = editTextQuantity.text.toString().toFloat()
                 callbackDialog.onClickDialogConfirm(product)
                 dismiss()
             } else{

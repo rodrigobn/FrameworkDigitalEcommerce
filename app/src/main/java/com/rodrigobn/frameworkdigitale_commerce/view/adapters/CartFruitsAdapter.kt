@@ -58,13 +58,14 @@ class CartFruitsAdapter(private val products: MutableList<Product>,
 
             titleProduct.text = product.name
             descriptionProduct.text = product.description
-            priceProduct.text = "%skg R$ %.2f".format(product.quantity, product.price)
+            var total = 0f
+            total += product.price * product.quantity
+            priceProduct.text = "%skg R$ %.2f".format(product.quantity, total)
 
             buttonRemove.setOnClickListener {
                 buttonRemoveProductClickListener.onButtonRemoveProductClickListener(product)
             }
         }
-
     }
 
     interface ButtonRemoveProductClickListener {
