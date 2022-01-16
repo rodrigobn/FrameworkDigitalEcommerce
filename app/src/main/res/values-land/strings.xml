@@ -8,7 +8,7 @@
     <string name="welcome_to_app">Bem vindo ao</string>
     <string name="message_login">Insira as suas informações\npara continuar</string>
     <string name="name">Nome</string>
-    <string name="password">password</string>
+    <string name="password">Senha</string>
     <string name="log_in">Entrar</string>
     <string name="invalid_password">Insira uma senha!</string>
     <string name="invalid_name">Insira um nome com pelo menos 4 caracteres!</string>
@@ -19,8 +19,9 @@
     <string name="add_product">add +</string>
     <string name="cart">Carrinho de compras</string>
     <string name="unit_kg">Kg</string>
-    <string name="quantity">Quantidade</string>
+    <string name="quantity">Quant.</string>
     <string name="add">Adicionar</string>
     <string name="search">Buscar</string>
     <string name="logout">Sair</string>
+    <string name="message_no_product_cart">Ainda não colocou nenhum produto no carrinho.\n Volte para a loja e adicione produtos</string>
 </resources>

@@ -10,6 +10,8 @@ import android.net.Uri
 import android.os.Environment
 import android.util.Log
 import android.util.Log.d
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.FileProvider
@@ -23,6 +25,7 @@ import com.itextpdf.text.pdf.PdfWriter
 import com.rodrigobn.frameworkdigitale_commerce.R
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
 import com.rodrigobn.frameworkdigitale_commerce.view.adapters.CartFruitsAdapter
+import com.rodrigobn.frameworkdigitale_commerce.view.adapters.DialogProductQuantity
 import com.rodrigobn.frameworkdigitale_commerce.view.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_cart.*
 import kotlinx.android.synthetic.main.activity_main.*
@@ -33,7 +36,7 @@ import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonRemoveProductClickListener {
+class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonProductClickListener, DialogProductQuantity.CallbackDialog {
 
     private val viewModel: CartViewModel by viewModel()
     private lateinit var fruitsRecyclerview: RecyclerView
@@ -90,6 +93,14 @@ class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonRemoveProductClickL
             receiptTotal += "Total R$ %.2f".format(total)
 
             listForReceipt = viewModel.productList.value!!
+
+            if (viewModel.productList.value.isNullOrEmpty()){
+                layout_no_products.visibility = VISIBLE
+                buttonFinish.isEnabled = false
+            } else {
+                layout_no_products.visibility = GONE
+                buttonFinish.isEnabled = true
+            }
         })
     }
 
@@ -110,7 +121,7 @@ class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonRemoveProductClickL
             document.add(Paragraph("Comprovante de compra"))
             document.add(Paragraph(" "))
             listForReceipt.forEach { product ->
-                document.add(Paragraph(product.name + "_________________" + (product.price * product.price)))
+                document.add(Paragraph(product.name + "_________________ R$ %.2f".format(product.price * product.quantity)))
             }
             document.add(Paragraph(" "))
             document.add(Paragraph(receiptTotal))
@@ -148,6 +159,20 @@ class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonRemoveProductClickL
 
     override fun onButtonRemoveProductClickListener(product: Product) {
         viewModel.delete(product)
+    }
+
+    override fun onButtonUpdateProductClickListener(product: Product) {
+        openDialog(product)
+    }
+
+    override fun onClickDialogConfirm(product: Product) {
+        viewModel.update(product)
+        fruitsRecyclerview.adapter!!.notifyDataSetChanged()
+    }
+
+    private fun openDialog(product: Product) {
+        val dialogQuantity = DialogProductQuantity(product, this, this)
+        dialogQuantity.show()
     }
 
     private fun hasWriteExternalStoragePermission() =

@@ -8,14 +8,13 @@ import com.bumptech.glide.Glide
 import com.rodrigobn.frameworkdigitale_commerce.R
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
 import kotlinx.android.synthetic.main.item_cart_product.view.*
-import kotlinx.android.synthetic.main.item_shop_product.view.*
 import kotlinx.android.synthetic.main.item_shop_product.view.descriptionProduct
 import kotlinx.android.synthetic.main.item_shop_product.view.imgProduct
 import kotlinx.android.synthetic.main.item_shop_product.view.priceProduct
 import kotlinx.android.synthetic.main.item_shop_product.view.titleProduct
 
 class CartFruitsAdapter(private val products: MutableList<Product>,
-                        private val buttonRemoveProductClickListener: CartFruitsAdapter.ButtonRemoveProductClickListener
+                        private val buttonProductClickListener: CartFruitsAdapter.ButtonProductClickListener
 ) : RecyclerView.Adapter<CartFruitsAdapter.ProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartFruitsAdapter.ProductViewHolder {
@@ -29,7 +28,7 @@ class CartFruitsAdapter(private val products: MutableList<Product>,
     override fun getItemCount() = products.count()
 
     override fun onBindViewHolder(holder: CartFruitsAdapter.ProductViewHolder, position: Int) {
-        holder.bindView(products[position], buttonRemoveProductClickListener)
+        holder.bindView(products[position], buttonProductClickListener)
     }
 
     fun updateList(itemList: MutableList<Product>) {
@@ -45,10 +44,11 @@ class CartFruitsAdapter(private val products: MutableList<Product>,
         private val descriptionProduct = itemView.descriptionProduct
         private val priceProduct = itemView.priceProduct
         private val buttonRemove = itemView.buttonRemoveProduct
+        private val buttonUpdate = itemView.buttonUpdateProduct
 
         fun bindView(
             product: Product,
-            buttonRemoveProductClickListener: ButtonRemoveProductClickListener
+            buttonProductClickListener: ButtonProductClickListener
         ) {
             Glide.with(itemView.context)
                 .load(product.image)
@@ -63,12 +63,18 @@ class CartFruitsAdapter(private val products: MutableList<Product>,
             priceProduct.text = "%skg R$ %.2f".format(product.quantity, total)
 
             buttonRemove.setOnClickListener {
-                buttonRemoveProductClickListener.onButtonRemoveProductClickListener(product)
+                buttonProductClickListener.onButtonRemoveProductClickListener(product)
             }
+
+            buttonUpdate.setOnClickListener {
+                buttonProductClickListener.onButtonUpdateProductClickListener(product)
+            }
+
         }
     }
 
-    interface ButtonRemoveProductClickListener {
+    interface ButtonProductClickListener {
         fun onButtonRemoveProductClickListener(product: Product)
+        fun onButtonUpdateProductClickListener(product: Product)
     }
 }

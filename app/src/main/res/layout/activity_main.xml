@@ -44,7 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/welcome"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:orientation="vertical"
                 android:layout_gravity="center"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -64,15 +64,11 @@
                     android:id="@+id/recyclerViewListFruits"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_marginTop="20dp"
                     android:layout_gravity="center"
                     tools:listitem="@layout/item_shop_product" />
 
             </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

@@ -6,9 +6,11 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.widget.doOnTextChanged
 import com.bumptech.glide.Glide
 import com.rodrigobn.frameworkdigitale_commerce.R
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
+import com.rodrigobn.frameworkdigitale_commerce.toDecimals
 import kotlinx.android.synthetic.main.dialog_quantity.*
 
 class DialogProductQuantity(val product: Product, private val callbackDialog: CallbackDialog, context: Context): Dialog(context) {
@@ -20,11 +22,22 @@ class DialogProductQuantity(val product: Product, private val callbackDialog: Ca
         setupCard()
         btnAddProduct.setOnClickListener {
             if (editTextQuantity.text.toString().isNotEmpty()){
-                product.quantity = editTextQuantity.text.toString().toFloat()
+                product.quantity = editTextQuantity.text.toString().toDecimals().toFloat()
                 callbackDialog.onClickDialogConfirm(product)
                 dismiss()
             } else{
                 Toast.makeText(context, "Digite uma quantidade", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        editTextQuantity.doOnTextChanged { text, _, _, _ ->
+            if (text != null){
+                if(text.isNotEmpty()){
+                    val total = product.price * text.toString().toDecimals().toFloat()
+                    textValue.text = "R$ %.2f".format(total)
+                } else {
+                    textValue.text = "R$ 0,00"
+                }
             }
         }
     }

@@ -4,9 +4,7 @@ import android.content.Intent
 import android.util.Log
 import android.view.Menu
 import androidx.appcompat.widget.SearchView
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rodrigobn.frameworkdigitale_commerce.R
 import com.rodrigobn.frameworkdigitale_commerce.data.models.Product
@@ -19,7 +17,6 @@ import com.rodrigobn.frameworkdigitale_commerce.view.shopCart.CartActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
-import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity(), ShopFruitsAdapter.ButtonAddProductClickListener, DialogProductQuantity.CallbackDialog {
 
@@ -51,7 +48,7 @@ class MainActivity : BaseActivity(), ShopFruitsAdapter.ButtonAddProductClickList
         tempListFruits = arrayListOf()
         tempListFruits.addAll(viewModel.productListMock)
         fruitsRecyclerview = recyclerViewListFruits
-        fruitsRecyclerview.layoutManager = GridLayoutManager(this@MainActivity, 2) //LinearLayoutManager(this@MainActivity, RecyclerView.HORIZONTAL, false)
+        fruitsRecyclerview.layoutManager = GridLayoutManager(this@MainActivity, 2)
         fruitsRecyclerview.setHasFixedSize(true)
         fruitsRecyclerview.adapter = ShopFruitsAdapter(tempListFruits, this@MainActivity)
 
@@ -113,7 +110,7 @@ class MainActivity : BaseActivity(), ShopFruitsAdapter.ButtonAddProductClickList
 
     override fun onClickDialogConfirm(product: Product) {
         viewModel.save(product)
-        Log.d("xxx", "init: ${product.toString()}")
+        Log.d("xxx", "init: $product")
     }
 
     override fun onButtonAddProductClickListener(product: Product) {
