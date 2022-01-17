@@ -18,7 +18,7 @@ Desafio para vaga de desenvolvedor mobile Android
 
 * [Sobre o Projeto](#sobre-o-projeto)
 * [Objetivos](#objetivos)
-* [Início do Projeto](#inicio-de-projeto)
+* [Início do Projeto](#início-de-projeto)
 * [Telas](#telas)
   * [Login](#login)
   * [Tela Inicial](#tela-inicial)
@@ -32,7 +32,6 @@ Desafio para vaga de desenvolvedor mobile Android
 
 
 ## Sobre o projeto
-
 
 O desafio consiste em desenvolver um aplicativo na plataforma Android usando Kotlin, seguindo alguns padrões como **MVVC**.
 \
