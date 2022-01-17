@@ -72,7 +72,7 @@ A tela principal do aplicativo exibe a lista de frutas disponíveis. Podendo ser
 Ao selecionar o botão Add + um Dialog é aberto e o usuário pode digitar a quantidade em kg do produto selecionado.
 \
 <img src="images/add_produto.gif" width="200" height="424"/>
-\
+
 
 ### Carrinho de compras
 
