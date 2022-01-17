@@ -18,7 +18,7 @@ Desafio para vaga de desenvolvedor mobile Android
 
 * [Sobre o Projeto](#sobre-o-projeto)
 * [Objetivos](#objetivos)
-* [Início do Projeto](#início-de-projeto)
+* [Início do Projeto](#início-do-projeto)
 * [Telas](#telas)
   * [Login](#login)
   * [Tela Inicial](#tela-inicial)
