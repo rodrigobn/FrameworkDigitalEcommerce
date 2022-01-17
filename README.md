@@ -68,7 +68,7 @@ Ambas as informações são validadas antes de ser passado para a próxima tela:
 A tela principal do aplicativo exibe a lista de frutas disponíveis. Podendo ser feito uma busca pelo nome da fruta na lista.
 \
 <img src="images/busca_produto.gif" width="200" height="424"/>
-
+\
 Ao selecionar o botão Add + um Dialog é aberto e o usuário pode digitar a quantidade em kg do produto selecionado.
 \
 <img src="images/add_produto.gif" width="200" height="424"/>
