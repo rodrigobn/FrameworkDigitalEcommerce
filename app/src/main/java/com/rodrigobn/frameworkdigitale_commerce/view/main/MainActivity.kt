@@ -45,6 +45,7 @@ class MainActivity : BaseActivity(), ShopFruitsAdapter.ButtonAddProductClickList
     }
 
     private fun prepareLists() {
+        viewModel.deleteAll()
         tempListFruits = arrayListOf()
         tempListFruits.addAll(viewModel.productListMock)
         fruitsRecyclerview = recyclerViewListFruits

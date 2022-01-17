@@ -24,14 +24,14 @@ class MainViewModel(private val databaseRepository: DatabaseRepository): ViewMod
         }
     }
 
-    fun updateListProduct(product: Product){
+    fun logout() {
+        prefs.nameProfile = null
         viewModelScope.launch {
-            databaseRepository.update(product)
+            databaseRepository.deleteAll()
         }
     }
 
-    fun logout() {
-        prefs.nameProfile = null
+    fun deleteAll(){
         viewModelScope.launch {
             databaseRepository.deleteAll()
         }

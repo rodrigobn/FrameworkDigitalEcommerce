@@ -24,10 +24,4 @@ class CartViewModel(private val databaseRepository: DatabaseRepository): ViewMod
             databaseRepository.update(product)
         }
     }
-
-    fun deleteAll(){
-        viewModelScope.launch {
-            databaseRepository.deleteAll()
-        }
-    }
 }

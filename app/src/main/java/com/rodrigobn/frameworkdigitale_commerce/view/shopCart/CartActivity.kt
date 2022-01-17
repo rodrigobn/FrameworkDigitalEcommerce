@@ -44,7 +44,7 @@ class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonProductClickListene
     private lateinit var cw: ContextWrapper
     private lateinit var fileDirectory: File
     private lateinit var fileName: String
-    private var receiptTotal: String = ""
+    private lateinit var receiptTotal: String
 
     override fun getLayout(): Int {
         return R.layout.activity_cart
@@ -65,6 +65,7 @@ class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonProductClickListene
         fileDirectory = cw.getExternalFilesDir(Environment.DIRECTORY_DOCUMENTS)!!
         fileName = "recibo_" + SimpleDateFormat("ddMMyyyy_HHmmss", Locale.getDefault())
             .format(System.currentTimeMillis())
+        receiptTotal = ""
     }
 
     private fun initViews() {
@@ -86,6 +87,7 @@ class CartActivity : BaseActivity(), CartFruitsAdapter.ButtonProductClickListene
             fruitsRecyclerview.adapter!!.notifyDataSetChanged()
 
             var total = 0f
+            receiptTotal = ""
             viewModel.productList.value?.forEach {product ->
                 total += product.price * product.quantity
             }
