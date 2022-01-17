@@ -34,7 +34,6 @@ Desafio para vaga de desenvolvedor mobile Android
 ## Sobre o projeto
 
 
-
 O desafio consiste em desenvolver um aplicativo na plataforma Android usando Kotlin, seguindo alguns padrões como **MVVC**.
 \
 <img src="images/splash.png" width="200" height="424"/>         <img src="images/login.png" width="200" height="424"/>
@@ -86,9 +85,9 @@ Ao selecionar o botão com o valor total um recibo é gerado em PDF.
 <img src="images/recibo.gif" width="200" height="424"/>
 
 ## Arquitetura
-A arquitetura usada no projeto é a **Model View ViewModel - MVVM**, onde dentro da aplicação as camadas são divididas em *Model*, *View* e *ViewModel*
+A arquitetura usada no projeto é a **Model View ViewModel - MVVM** + **Room**, onde dentro da aplicação as camadas são divididas em *Model*, *View* e *ViewModel* e persistência de dados utilizando o padrão DAO
 
-<img width="400" height=auto src="https://miro.medium.com/max/624/1*lr_s-SM-64OuvxhyGmQ2Gw.png" />
+<img width="600" height=auto src="https://miro.medium.com/max/624/1*lr_s-SM-64OuvxhyGmQ2Gw.png" />
 
 ### Resumo
 
@@ -110,6 +109,7 @@ Algumas bibliotecas externas foram usadas para ajudar no desenvolvimento:
 * [Rounded Image View](https://github.com/vinc3m1/RoundedImageView) - Imageview com bordas arredondadas.
 * [Glide](https://github.com/bumptech/glide) - Usada para inserir imagens com qualidade em Imageview.
 * [iText PDF](https://itextpdf.com/en) - Usada para geração de PDFs.
+* [Room](https://developer.android.com/jetpack/androidx/releases/room) - Usado para armazenar dados no banco de dados
 
 
 ## Contato
