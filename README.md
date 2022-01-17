@@ -37,10 +37,7 @@ Desafio para vaga de desenvolvedor mobile Android
 
 O desafio consiste em desenvolver um aplicativo na plataforma Android usando Kotlin, seguindo alguns padrões como **MVVC**.
 \
-\
-[![Product Name Screen Shot][product-screenshot]](/images/splash.png)       [![Product Name Screen Shot][product-screenshot]](/images/login.png)
-\
-\
+<img src="images/splash.png" width="200" height="424"/>         <img src="images/login.png" width="200" height="424"/>
 
 ## Objetivos
 
@@ -91,7 +88,7 @@ Ao selecionar o botão com o valor total um recibo é gerado em PDF.
 ## Arquitetura
 A arquitetura usada no projeto é a **Model View ViewModel - MVVM**, onde dentro da aplicação as camadas são divididas em *Model*, *View* e *ViewModel*
 
-<img src="images/arquitetura.gif" width="200" height="424"/>  
+<img src="images/arquitetura.png" width="200" height="424"/>  
   
 \
 ### Resumo
