@@ -88,8 +88,7 @@ Ao selecionar o botão com o valor total um recibo é gerado em PDF.
 ## Arquitetura
 A arquitetura usada no projeto é a **Model View ViewModel - MVVM**, onde dentro da aplicação as camadas são divididas em *Model*, *View* e *ViewModel*
 
-<img width="400" height=auto src="https://miro.medium.com/max/624/1*lr_s-SM-64OuvxhyGmQ2Gw.png" />  
-\
+<img width="400" height=auto src="https://miro.medium.com/max/624/1*lr_s-SM-64OuvxhyGmQ2Gw.png" />
 
 ### Resumo
 
